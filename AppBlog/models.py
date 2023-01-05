@@ -6,7 +6,7 @@ class Blog(models.Model):
     subtitulo=models.CharField(max_length=40)
     publicacion=models.DateField()
     contenido=models.TextField()
-    categoria=models.CharField(max_length=40)
+    categoria=models.CharField(max_length=140)
 
 class Autor(models.Model):
     apellido=models.CharField(max_length=40)
