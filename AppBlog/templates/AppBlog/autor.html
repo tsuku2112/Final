@@ -10,6 +10,9 @@
 <a href="{% url 'NewAutor'%}" class="btn btn-primary">Agregar nuevo Autor</a>
 <br>
 <br>
+<a href="{% url 'ListAutor'%}" class="btn btn-primary">Ver Lista de Autores</a>
+<br>
+<br>
 <p>Ingrese Apellido del Autor a buscar:</p>
 
 <form action="/AppBlog/resultadoautor/"    method="get">{% csrf_token %}

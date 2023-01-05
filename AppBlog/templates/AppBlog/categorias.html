@@ -12,6 +12,9 @@
     <a href="{% url 'NewCate'%}" class="btn btn-primary">Agregar nueva Categoria</a>
     <br>
     <br>
+    <a href="{% url 'ListCate'%}" class="btn btn-primary">Ver Lista de Categorias</a>
+    <br>
+    <br>
     <p>Ingrese nombre de la Categoria a buscar:</p>
 
     <form action="/AppBlog/resultadocategoria/"    method="get">{% csrf_token %}
