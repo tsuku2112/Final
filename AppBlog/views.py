@@ -9,8 +9,8 @@ from AppBlog.forms import *
 
 
 # Create your views here.
-def autores(request):
-    return render(request,"AppBlog/autores.html")
+def autor(request):
+    return render(request,"AppBlog/autor.html")
 
 def categorias(request):
     return render(request,"AppBlog/categorias.html")
@@ -22,8 +22,8 @@ def buscarBlog(request):
 
 def buscarAutor(request):
     buscar=request.GET.get("apellido", None)
-    total=Autores.objects.filter(apellido__contains=buscar)
-    return render(request,"AppBlog/resultadoautores.html",{"resultado":total})
+    total=Autor.objects.filter(apellido__contains=buscar)
+    return render(request,"AppBlog/resultadoautor.html",{"resultado":total})
 
 def buscarCategoria(request):
     nombre=request.GET["nombre"]
@@ -50,7 +50,7 @@ def blog(request):
         return render(request, "AppBlog/blog.html", {"miFormulario": miFormulario})
     
 
-def autores(request):
+def autor(request):
         if request.method == "POST":
                 miFormulario = BlogFormulario(request.POST) # Aqui me llega la informacion del html
                 print(miFormulario)
@@ -82,7 +82,7 @@ class BlogList(ListView):
     template="AppBlog/blog_list.html"
 
 class AutorList(ListView):
-    model=Autores
+    model=Autor
     template="AppBlog/autor_list.html"
     
 class CateList(ListView):
@@ -97,7 +97,7 @@ class BlogCreate(CreateView):
     success_url="/AppBlog/blog/list"
     
 class AutorCreate(CreateView):
-    model=Autores
+    model=Autor
     fields="__all__"
     success_url="/AppBlog/autor/list"
     
@@ -113,7 +113,7 @@ class BlogEdit(UpdateView):
     success_url="/AppBlog/blog/list"
     
 class AutorEdit(UpdateView):
-    model=Autores
+    model=Autor
     fields="__all__"
     success_url="/AppBlog/autor/list"
     
@@ -128,7 +128,7 @@ class BlogDetail(DetailView):
     template="AppBlog/blog_detail.html"
     
 class AutorDetail(DetailView):
-    model=Autores
+    model=Autor
     template="AppBlog/autor_detail.html"
     
 class CateDetail(DetailView):
@@ -141,7 +141,7 @@ class BlogDelete(DeleteView):
     success_url="/AppBlog/blog/list"
     
 class AutorDelete(DeleteView):
-    model=Autores
+    model=Autor
     success_url="/AppBlog/autor/list"
     
 class CateDelete(DeleteView):

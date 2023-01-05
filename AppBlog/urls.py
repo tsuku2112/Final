@@ -6,9 +6,9 @@ urlpatterns = [
     path('blog/', views.blog, name="Blogs"),
     path('blogApi/', views.blogApi),
     path('resultadoblog/', views.buscarBlog),
-    path('autores/', views.autores,name="Autores"),
+    path('autor/', views.autor,name="Autor"),
     path('categorias/', views.categorias, name="Categorias"),
-    path('resultadoautores/', views.buscarAutor),
+    path('resultadoautor/', views.buscarAutor),
     path('resultadocategoria/', views.buscarCategoria),
     
     path('blog/create/', views.BlogCreate.as_view(),name="NewBlog"),

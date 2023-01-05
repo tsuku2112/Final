@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='autores',
+            model_name='autor',
             name='mail',
             field=models.EmailField(default='No Disponible', max_length=254),
             preserve_default=False,

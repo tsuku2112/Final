@@ -8,7 +8,7 @@ class Blog(models.Model):
     contenido=models.TextField()
     categoria=models.CharField(max_length=40)
 
-class Autores(models.Model):
+class Autor(models.Model):
     apellido=models.CharField(max_length=40)
     nombre=models.CharField(max_length=40)
     mail=models.EmailField()

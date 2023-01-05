@@ -5,7 +5,7 @@
 {% block contenidoQueCambia %}
 
 
-<h1>Autores</h1>
+<h1>Autor</h1>
 
 Ingresar un nuevo Autor:
 <br>
@@ -14,7 +14,7 @@ Ingresar un nuevo Autor:
 <br>
 <p>Ingrese Apellido del Autor a buscar:</p>
 
-<form action="/AppBlog/resultadoautores/"    method="get">{% csrf_token %}
+<form action="/AppBlog/resultadoautor/"    method="get">{% csrf_token %}
 
     <input type="text" name="apellido" id="apellido">
     <input type="submit" value="Buscar">
