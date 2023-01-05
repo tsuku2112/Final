@@ -79,15 +79,15 @@ from django.views.generic.detail import DetailView
 #Lista
 class BlogList(ListView):
     model=Blog
-    template="AppBlog/Blog_list.html"
+    template="AppBlog/blog_list.html"
 
 class AutorList(ListView):
     model=Autores
-    template="AppBlog/Autor_list.html"
+    template="AppBlog/autor_list.html"
     
 class CateList(ListView):
     model=Categoria
-    template="AppBlog/cate_list.html"
+    template="AppBlog/categoria_list.html"
     
     
 #Crear    
@@ -133,12 +133,12 @@ class AutorDetail(DetailView):
     
 class CateDetail(DetailView):
     model=Categoria
-    template="AppBlog/cate_detail.html"
+    template="AppBlog/categoria_detail.html"
     
 #Borrar
 class BlogDelete(DeleteView):
     model=Blog
-    success_url="/AppBlog/autor/list"
+    success_url="/AppBlog/blog/list"
     
 class AutorDelete(DeleteView):
     model=Autores
