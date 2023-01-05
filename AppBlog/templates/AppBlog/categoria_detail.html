@@ -1,0 +1,14 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>{{categoria.nombre}}</h1>
+
+<h5>{{categoria.descripcion}}</h5>
+
+<br>
+<a onclick="history.back()" class="btn btn-dark">Regresar</a>
+
+{% endblock %}

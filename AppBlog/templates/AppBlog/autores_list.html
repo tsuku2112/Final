@@ -1,0 +1,19 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<ul>
+    {% for item in object_list %}
+    <p><strong><u>{{item.apellido}}, {{item.nombre}}</strong></p></u>
+    <a href="{% url 'DetailAutor' item.id%}" class="btn btn-info">Ver detalles</a>
+    <a href="{% url 'EditAutor' item.id%}" class="btn btn-secondary">Editar</a>
+    <a href="{% url 'DeleteAutor' item.id%}" class="btn btn-danger">Borrar</a>
+    <br>
+    --------------------------------------------------------------
+    <br>
+</p>
+    {% endfor %}
+
+</ul>
+{% endblock %}

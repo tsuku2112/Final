@@ -1,0 +1,14 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>{{autores.apellido}}, {{autores.nombre}}</h1>
+
+<h5>{{autores.mail}}</h5>
+
+<br>
+<a onclick="history.back()" class="btn btn-dark">Regresar</a>
+
+{% endblock %}

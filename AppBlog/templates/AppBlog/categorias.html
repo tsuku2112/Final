@@ -1,0 +1,25 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>CATEGORIAS</h1>
+
+    Ingresar nueva Categoria:
+    <br>
+    <a href="{% url 'NewCate'%}" class="btn btn-primary">Agregar nueva Categoria</a>
+    <br>
+    <br>
+    <p>Ingrese nombre de la Categoria a buscar:</p>
+
+    <form action="/AppBlog/resultadocategoria/"    method="get">{% csrf_token %}
+
+        <input type="text" name="titulo" id="titulo">
+        <input type="submit" value="Buscar">
+
+     </form>
+
+{% endblock %}

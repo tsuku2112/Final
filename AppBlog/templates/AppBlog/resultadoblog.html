@@ -1,0 +1,26 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+<br>
+<h3>Blogs Encontrados:</h3>
+<br>
+<br>
+{% for item in resultado %}
+<p><strong><u>{{item.titulo}}</strong></p></u>
+    <a href="{% url 'DetailBlog' item.id%}" class="btn btn-info">Ver detalles</a>
+    <a href="{% url 'EditBlog' item.id%}" class="btn btn-secondary">Editar</a>
+    <a href="{% url 'DeleteBlog' item.id%}" class="btn btn-danger">Borrar</a>
+    <br>
+    --------------------------------------------------------------
+    <br>
+</p>
+{% endfor %}
+
+
+  
+
+{% endblock %}

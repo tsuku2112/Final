@@ -1,0 +1,14 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<form action="" enctype="multipart/form-data"   method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <a onclick="history.back()" class="btn btn-dark">Regresar</a>
+    <input type="submit" class="btn btn-primary value="Confirmar">
+ </form>
+{% endblock %}

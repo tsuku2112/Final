@@ -1,0 +1,26 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>BLOG</h1>
+
+    Ingresar un nuevo Blog:
+    <br>
+    <a href="{% url 'NewBlog'%}" class="btn btn-primary">Agregar nuevo Blog</a>
+    <br>
+    <br>
+    <p>Ingrese Titulo de Blog a buscar:</p>
+
+    <form action="/AppBlog/resultadoblog/"    method="get">{% csrf_token %}
+
+        <input type="text" name="titulo" id="titulo">
+        <input type="submit" value="Buscar">
+
+     </form>
+  
+
+{% endblock %}
