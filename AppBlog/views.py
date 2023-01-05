@@ -50,22 +50,6 @@ def blog(request):
         return render(request, "AppBlog/blog.html", {"miFormulario": miFormulario})
     
 
-def autores(request):
-        if request.method == "POST":
-                miFormulario = BlogFormulario(request.POST) # Aqui me llega la informacion del html
-                print(miFormulario)
-    
-                if miFormulario.is_valid:
-                    informacion = miFormulario.cleaned_data
-                    blog = Blog(titulo=informacion["Titulo"], publicacion=informacion["Fecha"],
-                                contenido=informacion["Contenido"])
-                    blog.save()
-                    return render(request, "AppBlog/inicio.html")
-        else:
-                    miFormulario = BlogFormulario()
-    
-        return render(request, "AppBlog/blog.html", {"miFormulario": miFormulario})
-
 
 def blogApi(request):
     blog_todos= Blog.objects.all()
@@ -79,7 +63,7 @@ from django.views.generic.detail import DetailView
 #Lista
 class BlogList(ListView):
     model=Blog
-    template="AppBlog/Blog_list.html"
+    template="AppBlog/blog_list.html"
 
 class AutorList(ListView):
     model=Autores
@@ -138,7 +122,7 @@ class CateDetail(DetailView):
 #Borrar
 class BlogDelete(DeleteView):
     model=Blog
-    success_url="/AppBlog/autor/list"
+    success_url="/AppBlog/blog/list"
     
 class AutorDelete(DeleteView):
     model=Autores

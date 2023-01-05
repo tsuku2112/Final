@@ -6,9 +6,8 @@
 
 
     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>CATEGORIAS</h1>
+    <h1>Categorias</h1>
 
-    Ingresar nueva Categoria:
     <br>
     <a href="{% url 'NewCate'%}" class="btn btn-primary">Agregar nueva Categoria</a>
     <br>
@@ -17,7 +16,7 @@
 
     <form action="/AppBlog/resultadocategoria/"    method="get">{% csrf_token %}
 
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="nombre" id="nombre">
         <input type="submit" value="Buscar">
 
      </form>
